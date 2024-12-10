@@ -81,9 +81,9 @@
             margin-top: 20px;
         }
         .features {
-            background-color: #513901aa;
+            background-color: rgba(17, 8, 1, 0.897);
             color: white;
-            width: 40%;
+            width: 30%;
             height: 30em;
             
             padding: 20px;
@@ -93,34 +93,36 @@
         .features ul{
             font-size: 13px;
         }
-        .features .book{
+        .features .btn{
            
             width: 85%;
             height: 3em;
             text-align: center;
+            margin-top: 9em;
+
            
         }
-        .book button{
+        .centered-div {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    /* Optional: Define a height for the div */
+   
+}
+
+        .features button{
             border: none;
-            background-color: white;
-            color: black;
-          
             font-size: small;
             width: 100%;
             height: 100%;
          
         }
-        .book button a{
+        .features button a{
             text-decoration: none;
             color: black;
            
         }
-        .features .book:hover{
-            
-            background-color: #5139015c;
-            border: 1px solid white;
-            
-        }
+       
         .features .book:hover button{
             background-color: #51390100;
         }
@@ -132,8 +134,8 @@
         }
         .thumbnails img {
             cursor: pointer;
-            width: 100px;
-            height: 70px;
+            width: 120px;
+            height: 150px;
             object-fit: cover;
             border: 2px solid transparent;
         }
@@ -252,6 +254,68 @@
 
 
 
+            /* customers review  */
+
+            .carousel-item {
+            padding: 2rem;
+            text-align: center;
+        }
+        .review-text {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        .review-author {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .customers-header{
+          font-weight: bold;
+          font-style: italic;
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+        .property-card{
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+        }
+        .property-card a{
+            text-decoration: none;
+            color: black;
+        }
+        .property-card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .property-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .property-info-btn button{
+        border: none;
+        text-align: center;
+        border-radius: 4px;
+    }
+    .property-info-btn button a{
+        text-decoration: none;
+        color: white;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .new-price {
+      font-weight: bold;
+     
+    }
+
+    .property-info {
+      font-size: 0.9rem;
+    }
+
+   
+   
 
 
             /* foootter */
@@ -332,40 +396,36 @@
     <div class="parent-contaiin">
 
         <header class="header container-fluid py-3">
-            <div class="row align-items-center">
+            <div class="row align-items-center px-4">
               <!-- Logo Section -->
               <div class="col-12 col-md-4 text-center text-md-start">
-              
-                <div class="logo" style="width: 189px; margin: 0 auto;">
-                    <a href="index.html">
-                  <img
-                    src="images/6-5-e1626882432619.png"
-                    alt=""
-                    style="height: 50px; display: block; margin: 0 auto;"
-                  />
-                </a>
-                  <span
-                    style="font-weight: bold; display: block; text-align: center;"
-                  >
-                   
+                <div class="logo" style="width: 189px; margin: 0;">
+                  <a href="index.html">
+                    <img
+                      src="images/6-5-e1626882432619.png"
+                      alt=""
+                      style="height: 50px; display: block; margin: 0;"
+                    />
+                  </a>
+                  <span style="font-weight: bold; display: block; text-align: center;">
                   </span>
                 </div>
               </div>
           
               <!-- Contact Information Section -->
-              <div class="col-12 col-md-8 mt-3 mt-md-0">
-                <div class="contact-info row">
+              <div class="col-12 col-md-8 mt-3 mt-md-0 p">
+                <div class="contact-info row g-3">
                   <!-- Location -->
-                  <div class="contact-info-location col-12 col-lg-6 text-center text-lg-start mb-2 mb-lg-0">
+                  <div class="contact-info-location col-12 col-lg-6 text-center text-lg-start">
                     <p>
                       <i class="fas fa-map-marker-alt"></i>
                       #8 Gado Nasko Close, Off Jose Marti Str, Asokoro, Abuja, Nigeria
                       46 km from Abuja Int'l Airport
                     </p>
                   </div>
-          
+              
                   <!-- Contact Details -->
-                  <div class="contact-info-call col-12 col-lg-6 text-center text-lg-start">
+                  <div class="contact-info-call col-12 col-lg-6 text-center text-lg-end ms-auto">
                     <p>
                       <i class="fas fa-phone"></i> +234 908 187 9231
                     </p>
@@ -379,29 +439,30 @@
                   </div>
                 </div>
               </div>
+              
+              
             </div>
           </header>
-         
 
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-nav sticky-nav">
-      <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-0"> <!-- Remove ms-auto for left alignment -->
-                  <li class="nav-item"><a class="nav-link " href="Rooms.html">Rooms</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Services</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Dining</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Events</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Reviews</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Gallery</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Careers</a></li>
-                  <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
-              </ul>
-          </div>
-      </div>
-     </nav>
+          <nav class="navbar navbar-expand-lg navbar-dark fixed-nav sticky-nav">
+            <div class="container">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto"> <!-- mx-auto centers the content -->
+                  <li class="nav-item"><a class="nav-link" href="Rooms.html">Rooms</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                 
+                  <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                  
+                  <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
 
     <section class="container mt-5">
         <h1 class="text-center" style="font-weight: 900; font-family: 'Times New Roman', Times, serif;  font-size: 50px;">Penthouse 1</h1>
@@ -465,39 +526,61 @@
         <div class="thumb-section p-2 m-auto mt-3" style="width: 72rem;">
 
             <div class="thumbnails d-flex justify-content-between p-2 m-auto mt-3">
-
-                <div class="thum-images d-flex bg-white w-75 ">
+                <div class="thumbnails-contents">
+                    <div class="thum-images d-flex bg-white w-75 ">
                     
                  
     
-                    <div class="IMG-content2">
-                        <img src="images/D-scaled.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
+                        <div class="IMG-content2">
+                            <img src="images/D-scaled.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
+                        </div>
+    
+                        <div class="IMG-content2">
+                            <img src="images/kss_optimized.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
+                        </div>
+    
+                        <div class="IMG-content2">
+                            <img src="images/H.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
+                        </div>
+                        <div class="IMG-content3">
+                            <img src="images/Lu27.jpeg" alt="Room 3" onclick="changeCarouselImage(2)">
+                        </div>
+                        <div class="IMG-content4">
+                            <img src="images/2-street-34.jpg" alt="Room 3" onclick="changeCarouselImage(2)">
+                        </div>
+                        <div class="IMG-content4">
+                            <img src="images/plesant.jpg" alt="Room 3" onclick="changeCarouselImage(2)">
+                        </div>
+                       
+                        
                     </div>
 
-                    <div class="IMG-content2">
-                        <img src="images/kss_optimized.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
-                    </div>
-
-                    <div class="IMG-content2">
-                        <img src="images/H.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
-                    </div>
-                    <div class="IMG-content3">
-                        <img src="images/Lu27.jpeg" alt="Room 3" onclick="changeCarouselImage(2)">
-                    </div>
-                    <div class="IMG-content4">
-                        <img src="images/2-street-34.jpg" alt="Room 3" onclick="changeCarouselImage(2)">
-                    </div>
-                    <div class="IMG-content4">
-                        <img src="images/plesant.jpg" alt="Room 3" onclick="changeCarouselImage(2)">
-                    </div>
-                   
                     
+        <div class="room-details-grid mt-5">
+            <div class="grid-item">
+                <p>Room size</p>
+                <strong>57m²</strong>
+            </div>
+            <div class="grid-item">
+                <p>Sleeps</p>
+                <strong>8 guess</strong>
+            </div>
+            <div class="grid-item">
+                <p>Bed size</p>
+                <strong>King Size</strong> 
+            </div>
+            <div class="grid-item">
+                <p>Bathrooms</p>
+                <strong> 1 per Room</strong>
+            </div>
+          </div>
                 </div>
+             
              
     
     
-                <div class="features" style="font-family: 'Times New Roman', Times, serif;">
-                    <h4>Features</h4>
+                <div class="features text-start" style="font-family: 'Times New Roman', Times, serif;">
+                    <h4  class="">Features</h4>
                     <ul>
                         <li>Access to secured elevator</li>
                         <li>Complimentary breakfast</li>
@@ -507,18 +590,17 @@
 
 
                     <p class="text-center " style="margin-top: em; font-size: 3.5em;">₦1,000,000</p>
-                    <div class="book " style="margin: 9rem auto;">
-
-                         <button type="button" class="btn" id="read-more-btn" data-bs-toggle="modal" data-bs-target="#reservationModal" style="background-color: rgba(0, 0, 0, 0.7); color: white;">
-                        Book Now
-                    </button>
+                    
+                    <div class="centered-div">
+                        <button type="button" class="btn bg-primary" id="read-more-btn" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
+                        </button>
                     </div>
                     
-                    <p class="text-center " style="margin-top: -9em; font-size: 1em;">Best Choice - Low Price Guarantee</p>
+                        
+                </div>
                 </div>
     
             </div>
-            
 
         </div>
      
@@ -580,43 +662,16 @@
 
 
 
+          <div class="description d-flex mt-5 m-auto p-4 justify-content-between" style="font-family: 'Times New Roman', Times, serif; width: 72rem;">
 
-
-
-
-
-
-        <div class="room-details-grid">
-            <div class="grid-item">
-                <p>Room size</p>
-                <strong>57m²</strong>
-            </div>
-            <div class="grid-item">
-                <p>Sleeps</p>
-                <strong>8 guess</strong>
-            </div>
-            <div class="grid-item">
-                <p>Bed size</p>
-                <strong>King Size</strong> 
-            </div>
-            <div class="grid-item">
-                <p>Bathrooms</p>
-                <strong> 1 per Room</strong>
-            </div>
-          </div>
-          
-
-
-          <div class="description d-flex mt-5 p-4 justify-content-between" style="font-family: 'Times New Roman', Times, serif; width: 100%;">
-
-            <div class="description-text p-2" style="width: 70%;font-size: 18px ;">
+            <div class="description-text p-2" style="width: 68%;font-size: 18px ;">
                 <div class="description-header">
                     <h3>Room Details</h3>
                 </div>
 
 
 
-                <div class="description-tex-para">
+                <div class="description-tex-para " >
                     <div class="description-tex-para1">
                         <p>The Wells Carlton Apartment is tastefully furnished 3 bedroom, a spacious living room and butler room with a massage chair, a dining table for six.</p>
                     </div>
@@ -673,11 +728,8 @@
                             <li>Local and Intl. Channels</li>
                             <li>Complimentary Water</li>
                             <li>Dry-Cleaning Services</li>
-                            <li>Bathroom Toiletries & Luxury Kits</li>
+                            <li>Bathroom Toiletries</li>
                         </div>
-
-
-
 
 
                     </div>
@@ -708,164 +760,159 @@
 
           </div>
 
+    </section>
 
-          <div class="regular-plan w-75 m-3">
-            <div class="regular-pllan-headeer">
-                <h3>Regular plan</h3>
+
+
+
+    <!-- customers review section -->
+
+    <section>
+
+        <div class="container" style="margin-top: 9rem; height: 300px;">
+            <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
+            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner m-auto">
+                    <div class="carousel-item active">
+                        <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
+                        <p class="review-author">- Solange, New Zealand</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="review-text">"The location is fantastic; it's in the middle of everywhere. It's easily accessible and easy to describe to guests visiting. The complimentary breakfast is also a nice concept in addition to the self-serviced kitchen in the apartment."</p>
+                        <p class="review-author">- Shirley</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="review-text">"Exceptional hospitality! The rooms were clean, spacious, and equipped with everything we needed. The staff were so friendly and made sure all our needs were met. Definitely coming back!"</p>
+                        <p class="review-author">- Alex</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="review-text">"Loved the vibe and atmosphere! The decor was modern, and the services were beyond my expectations. A perfect getaway destination. Highly recommended!"</p>
+                        <p class="review-author">- Priya</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="review-text">"Conveniently located, comfortable rooms, and outstanding customer care. The entire experience felt personalized and memorable. Kudos to the team!"</p>
+                        <p class="review-author">- James</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-
-
-
-            <div class="regular-plan-grid lh-lg">
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Mon</strong>
-                    </div>
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Tues</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Wed</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-
-                    <div class="strong">
-                        <strong>Thurs</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Fri</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Sat</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Sud</strong>
-                    </div>
-                    
-                    <p>₦1,000,000	</p>
-                </div>
-            </div>
-          </div>
+        </div>
         
-
-
-
-          <!-- room feautures -->
-
-
-          <div class="room-feautures d-flex">
-
-            <div class="room-feautures-content">
-                <div class="room-feautures-header">
-                
-                    <h4>Room Features</h4>
-                </div>
-
-                <div class="room-feautures-content-para">
-                    <p>Breakfast: free</p>
-                    <p>Safe: YES</p>
-                    <p>Lift: NO</p>
-                    <p>TV: YES</p>
-                    <p>View: Center of City</p>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="room-feautures-icon m-auto d-flex w-50 justify-content-between align-items-center ">
-
-                <div class="room-feautures-icon-1">
-                    <i class="fas fa-wifi"></i>
-                    <p>Free wifi:</p>
-                    <p>YES</p>
-                </div>
-                
-
-                <div class="room-feautures-icon-2">
-
-                    <div class="hair-dryer-icon">
-                        <i class="fas fa-wind"></i> 
-                        <p>Hair Dryer</p>
-                    </div>
-                    
-
-                </div>
-
-                
-                <div class="room-feautures-icon-3">
-                    <div class="air-conditioner-icon">
-                        <i class="fas fa-snowflake"></i> 
-                        <p>Air Conditioner</p>
-                    </div>
-                
-
-                </div>
-
-                
-                <div class="room-feautures-icon-4">
-
-                    <div class="wine-glass-icon">
-                        <i class="fas fa-wine-glass"></i> 
-                        <p>minibar</p>
-                    </div>
-                    
-
-                </div>
-    
-
-            </div>
-
-
-           
-  
-          </div>
-
 
     </section>
 
 
+    <section>
+
+       
+
+
+        <div class="container my-5">
+            <div class="other-properties justify-content-center text-center">
+                <h3>Other Properties</h3>
+            </div>
+            <div class="row g-4">
+              <!-- Card 1 -->
+              <div class="col-lg-4 col-md-6">
+                <div class="card property-card">
+                    <a href="">
+                        <img src="images/AP5-845x563.jpg.webp" class="card-img-top" alt="118 Hamptons, Orange Island">
+                        <div class="card-body">
+                          <h5 class="card-title">118 Hamptons, Orange Island</h5>
+                          <p class="card-text">
+                            <span class="new-price">N 180,000,000</span>
+                          </p>
+                          <p class="property-info">Orange Island, End of Freedom way, Lekki</p>
+                          <div class="property-info-content d-flex justify-content-between">
+      
+                              <div class="property-info-para">
+                                  <p class="property-info">4 Beds • 2 Baths</p>
+                              </div>
+      
+                              <div class="property-info-btn">
+                                  <button class="bg-primary" style="height: 37px; width: 98px;  "><a href="">Book now</a></button>
+                              </div>
+                             
+                          </div>
+                          
+                        </div>
+                    </a>
+                </div>
+              </div>
+        
+              <!-- Card 2 -->
+              <div class="col-lg-4 col-md-6">
+                <div class="card property-card">
+                    <a href="">
+                        <img src="images/AP2-845x563.jpg.webp" class="card-img-top" alt="Beach Resort Estate">
+                        <div class="card-body">
+                          <h5 class="card-title">Beach Resort Estate</h5>
+                          <p class="card-text">
+                           
+                            <span class="new-price">N 280,000,000</span>
+                          </p>
+                          <p class="property-info">Platinum Way, Osapa London, Lekki</p>
+
+                          <div class="property-info-content d-flex justify-content-between">
+      
+                              <div class="property-info-para">
+                                  <p class="property-info">4 Beds • 2 Baths</p>
+                              </div>
+      
+                              <div class="property-info-btn">
+                                  <button class="bg-primary" style="height: 37px; width: 98px;  "><a href="">Book now</a></button>
+                              </div>
+                             
+                          </div>
+                        </div>
+                    </a>
+                
+                </div>
+              </div>
+        
+              <!-- Card 3 -->
+              <div class="col-lg-4 col-md-6">
+                <div class="card property-card">
+                    <a href="">
+                        <img src="images/AJ_4533-93.jpg" class="card-img-top" alt="Signature Estate, Lekki">
+                        <div class="card-body">
+                          <h5 class="card-title">Signature Estate, Lekki</h5>
+                          <p class="card-text">
+                            
+                            <span class="new-price">N 220,000,000</span>
+                          </p>
+                          <p class="property-info">Off Freedom Way, Lekki Phase 1</p>
+
+                          <div class="property-info-content d-flex justify-content-between">
+      
+                              <div class="property-info-para">
+                                  <p class="property-info">4 Beds • 2 Baths</p>
+                              </div>
+      
+                              <div class="property-info-btn">
+                                  <button class="bg-primary" style="height: 37px; width: 98px;  "><a href="">Book now</a></button>
+                              </div>
+                             
+                          </div>
+                        </div>
+                    </a>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+    </section>
+
     <!-- footer -->
-
-  
-
-
 
 
   <footer class="footer mt-5">
@@ -973,12 +1020,13 @@
     emailjs.sendForm('service_rv0tx0s', 'template_gifo0wu', this)
       .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
-        alert('Booking request sent successfully!');
-        
-        // Redirect to confirmation page
+
+        // Automatically redirect to confirmation page
         window.location.href = 'confirmation.html'; // Replace with your confirmation page URL
       }, function(error) {
         console.log('FAILED...', error);
+
+        // Show an error alert if the email fails to send
         alert('Failed to send booking request. Please try again.');
       });
   });
