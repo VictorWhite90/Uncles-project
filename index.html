@@ -19,6 +19,7 @@
         padding: 0;
         box-sizing: border-box;
         overflow: hidden;
+        
         overflow-y: scroll;
         
       }
@@ -43,10 +44,14 @@
 }
 
 @media (max-width: 768px) {
-  .logo img {
-    height: 40px; /* Reduce logo size for smaller screens */
-  }
 
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Container */
   .contact-info p {
     font-size: 0.8rem; /* Adjust font size for small devices */
   }
@@ -60,29 +65,12 @@
 }
 
 
-        .navbar {
-            background-color: #000000;
-        }
-        .navbar a {
-            color: white;
-        }
-        nav.navbar {
-    height: 150px; /* Adjust the height of the navbar */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Use the imported font */
-}
+   
+  
+    
 
-.navbar-nav .nav-link {
-    font-size: 2rem; /* Make text larger */
-    padding: 0.5rem 1rem; /* Add spacing for better aesthetics */
-}
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff; /* Ensure links are visible on a dark background */
-}
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #f0ad4e; /* Add a hover effect */
-}
 
         .contact-info {
             text-align: right;
@@ -94,19 +82,20 @@
         .contact-info p {
             margin: 0;
         }
-        .navbar-nav .nav-item {
-            margin-right: 15px;
-        }
+   
         .booking-bar {
             background-color: #f8f9fa;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             padding: 15px;
             border-radius: 5px;
             margin-top: 20px;
+            display: none;
         }
      /* Background container */
+
 .background-container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -236,8 +225,16 @@
       background-color: rgba(0, 0, 0, 0.5);
     }
 
-    /* Responsive Design */
+    /* Responsive Design  mobile*/
     @media (max-width: 768px) {
+
+      
+
+      /* nav and header section */
+      .header{
+        display: none;
+      }
+
       .carousel-caption-left {
         display: none;
         width: 90%;
@@ -245,11 +242,11 @@
         height: 200px;
         transform: translateY(-50%);
       }
-
+  
       .carousel-inner {
         width: 100%;
-        
       }
+     
     }
  
 
@@ -273,13 +270,14 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2.5rem;
+      
     }
   
     .room-card {
       position: relative;
       overflow: hidden;
       width: 350px;
-      
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
   
@@ -381,6 +379,7 @@
   display: flex;
   flex-wrap: wrap; /* Wrap content on small screens */
   gap: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Text Section */
@@ -416,9 +415,7 @@
   }
 
   @media screen and (max-width: 768px) { 
-      .calton-desp-p{
-        background-color: #3d3111;
-      }
+ 
 
         .calton-desp-img img {
             max-width: 200px; /* Adjust the size for mobile */
@@ -452,6 +449,7 @@
 
 /* Styles for devices between 1024px and 1440px (common desktop range) */
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
+
     .about-cons{
        width: 75%;
        padding: 2em;
@@ -567,6 +565,11 @@
     font-size: 18px;
     text-align: center;
   }
+
+ 
+
+
+
   .about-image {
     position: relative;
     width: 60%;
@@ -605,6 +608,9 @@
     padding: 10px 20px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   .play-button:hover {
@@ -632,66 +638,102 @@
 
 
             footer {
-      background-color: #d1e9eb;
-      
-      color: #333;
-      height: 33em;
-    }
+  background-color: #d1e9eb;
+  color: #333;
+  height: auto; /* Let the height adjust automatically for content */
+  padding: 20px 0;
+}
 
-    .footer h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #000;
-      justify-content: start;
-      padding: 20px 10px;
-    }
+.footer .container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between;
+}
 
-    .footer .btn {
-      background-color: #6c5236;
-      color: #fff;
-      border: none;
-      font-size: 14px;
-    }
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+  padding: 20px 10px;
+}
 
-    .footer .btn:hover {
-      background-color: #523f2a;
-    }
+.footer .btn {
+  background-color: #6c5236;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+}
 
-    .social-icons a {
-      margin-right: 10px;
-      font-size: 18px;
-      color: #333;
-      text-decoration: none;
-    }
+.footer .btn:hover {
+  background-color: #523f2a;
+}
 
-    .social-icons a:hover {
-      color: #6c5236;
-    }
+.social-icons {
+  margin-top: 10px;
+}
 
-    .footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
 
-    .footer ul li {
-      font-size: 14px;
-      line-height: 1.5;
-    }
+.social-icons a:hover {
+  color: #6c5236;
+}
 
-    .footer ul li a {
-      color: #333;
-      text-decoration: none;
-    }
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .footer ul li a:hover {
-      text-decoration: underline;
-    }
+.footer ul li {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .col-lg-3 {
+  flex: 1 1 30%; /* Allow each column to take up 30% of available space and adjust as needed */
+  margin: 10px;
+}
+
+.footer .calton-desp,
+.footer .connet-sec {
+  flex-direction: column;
+}
+
+.footer .calton-desp,
+.footer .connet-sec,
+.footer .locate-content {
+  width: 100%; /* Ensure full width on smaller screens */
+}
+@media (max-width: 768px) {
+  .footer .col-lg-3 {
+    flex: 1 1 100%; /* Make each column take up the full width on smaller screens */
+  }
+  
+
+  .locate-content{
+    display: none;
+  }
+}
 
     .parent-contaiin{
       justify-content: center;
       width: 100%;
       overflow: hidden;
+    
     }
 
     .scroll-to-top {
@@ -717,8 +759,283 @@
   background-color: #0056b3; /* Darker shade on hover */
   transform: scale(1.1); /* Slight zoom effect */
 }
-
+    .mainNv{
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  height: 130px;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Use the imported font */
   
+  
+}
+.mainNav-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ 
+}
+
+
+
+
+.logo img {
+  height: 50px;
+  display: none;
+}
+
+/* Nav Links */
+.mainnav-links {
+  list-style: none;
+  display: flex;
+justify-content: center;
+  gap: 2.5rem;
+ 
+  width: 100%;
+ 
+}
+
+.mainnav-links li a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2.6rem;
+  transition: color 0.3s;
+}
+.mainnav-links li a:hover {
+  color: #ff9f43;
+}
+.Navmenu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+  
+}
+.Navmenu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .mainNv {
+    padding: 1em;
+    background: #fcf9f9;
+    
+   
+  }
+  .mainNav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+  }
+
+  .Navmenu-toggle {
+    display: flex;
+    background-color: #000;
+    
+    
+  }
+
+  .logo img {
+    display: block;
+  }
+
+  .mainnav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    flex-direction: column;
+    background: #000; /* Add background for visibility */
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 10; /* Above content but below toggle */
+    overflow-y: auto; /* Allow scrolling if the content overflows */
+  }
+
+  .mainnav-links.show {
+    right: 0; /* Make visible */
+  }
+  
+  .mainnav-links li {
+    margin: 1rem 0; /* Space between links */
+    font-size: 13px;
+  }
+  .mainnav-links li a{
+    font-size: 20px;
+  }
+
+  /* sliding bg video */
+  .background-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    background: #000;
+    height: 200px;
+  }
+
+  .background-image {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .overlay-content {
+    font-size: 1rem; /* Smaller font size */
+    padding: 1rem; /* Add padding for readability */
+  }
+
+  .booking-bar {
+    display: none;
+  }
+
+}
+ 
+  
+
+ 
+  @media (max-width: 768px) {
+    /* Reduce the title font size */
+    .room-card{
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .room-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .rooms .section-title {
+      font-size: 1rem;
+    }
+
+    /* Adjust room card height and spacing */
+    .rooms .room-card {
+      height: auto; /* Let the content dictate height */
+      margin-bottom: 1rem;
+    }
+
+    /* Adjust room image dimensions */
+    .rooms .room-card img {
+      height: 200px; /* Restrict image height */
+      object-fit: cover;
+      width: 100%; /* Ensure the image takes the full width */
+    }
+
+    /* Reduce padding and margins in room details */
+    .rooms .room-details {
+      height: 14em;
+      padding: 1rem;
+      
+      
+    }
+
+    .rooms .room-details h2 {
+      font-size: 1.8rem;
+    }
+
+    .rooms .room-details p {
+      font-size: 0.9rem;
+    }
+
+    .rooms .room-details-price .price {
+      font-size: 1.7rem;
+    }
+
+    .rooms .room-details-btn button {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      margin-top: px;
+    }
+
+    .room-icons .icon i {
+    font-size: 1.1rem;  /* Reduce the size for mobile screens */
+  }
+  
+
+ 
+
+  /* Apply the background color change animation on hover for mobile */
+  .room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: changeBackgroundColor 2s ease-in-out forwards;
+  }
+
+
+  /* the video section */
+
+  .hero{
+  display: none;
+ }
+ .aboutx {
+    flex-direction: column; /* Stack items vertically on mobile */
+    width: 100%; /* Full-width section on mobile */
+    height: auto; /* Allow content to adjust dynamically */
+    margin-top: 0; /* Remove negative margin for better spacing */
+    padding: 20px; /* Add padding for better readability */
+    margin-top: 2EM;
+  }
+
+  .aboutx-container {
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px; /* Add spacing between elements */
+  }
+
+  .aboutx-content {
+    width: 100%; /* Take full width on mobile */
+    text-align: center; /* Center-align text */
+    padding: 20px;
+    justify-content: start;
+    text-align: start;
+  }
+
+  .aboutx-content h2 {
+    font-size: 1.5rem; /* Adjust font size for mobile readability */
+  }
+
+  .about-image {
+    width: 100%; /* Full width for image */
+    height: auto; /* Let image height adjust dynamically */
+  }
+
+  .about-image img {
+    width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+  }
+
+  .custom-margin {
+    margin-top: 2em !important; /* Override inline style for mobile */
+    height: auto;
+    margin-bottom: 12em;
+  }
+}
+
+   /* Keyframe animation to change background color */
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: #f0f8ff; /* Original blue */
+  }
+  50% {
+    background-color: #06365376; /* New blue */
+  }
+  100% {
+    background-color: #f0f8ff; /* Original blue again */
+  }
+}
+ 
     </style>
 
 </head>
@@ -753,6 +1070,8 @@
                 <i class="fas fa-map-marker-alt"></i>
                 #8 Gado Nasko Close, Off Jose Marti Str, Asokoro, Abuja, Nigeria
                 46 km from Abuja Int'l Airport
+
+                
               </p>
             </div>
         
@@ -775,32 +1094,40 @@
         
       </div>
     </header>
-    
-  
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-nav sticky-nav">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto"> <!-- mx-auto centers the content -->
-          <li class="nav-item"><a class="nav-link" href="Rooms.html">Rooms</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-         
-          <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-          
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  
-  
 
-    <div class="container-fluid p-0">
+
+    <!-- navbar section -->
+
+    <nav class="mainNv">
+    <div class="mainNav-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <img src="images/6-5-e1626882432619.png" alt="Logo">
+    </a>
+
+    <!-- Toggle Button -->
+    <button class="Navmenu-toggle" id="NavmenuToggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+
+    <!-- Navigation Links -->
+    <ul class="mainnav-links" id="mainnavLinks">
+      <li><a href="Rooms.html">Rooms</a></li>
+      <li><a href="#">Services</a></li>
+
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+    </nav>
+
+
+    <div class="container-fluid sliderimages p-0">
         <!-- Background Container -->
         <div class="background-container">
           <div class="background-image" style="background-image: url('images/plesant\ street.jpg');"></div>
@@ -825,20 +1152,21 @@
 
 
       
-    <section class="container mt-5">
-        <div class="booking-bar d-flex g-5  justify-content-between align-items-center sticky-navs">
-            <input type="date" class="form-control w-25" placeholder="Check In">
-            <input type="date" class="form-control w-25" placeholder="Check Out">
-            <select class="form-select w-25">
-                <option>Adults</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-            <button class="btn btn-primary w-25"><a href="Rooms.html" class="room-btn text-light" style="text-decoration: none;">Check Rooms</a></button>
+      <section class="container mt-5 d-none d-md-block">
+        <div class="booking-bar d-flex g-5 justify-content-between align-items-center sticky-navs">
+          <input type="date" class="form-control w-25" placeholder="Check In">
+          <input type="date" class="form-control w-25" placeholder="Check Out">
+          <select class="form-select w-25">
+            <option>Adults</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+          <button class="btn btn-primary w-25">
+            <a href="Rooms.html" class="room-btn text-light" style="text-decoration: none;">Check Rooms</a>
+          </button>
         </div>
-    </section>
-
+      </section>
 
 
 
@@ -969,14 +1297,15 @@
     <img src="images/whatssap.png" alt="WhatsApp">
   </a>
     
-    <h1 class="perfect text-center my-5 fs-1 fs-md-2 fs-lg-3" style="font-family: 'Times New Roman', Times, serif;">The Perfect Stay, Guaranteed</h1>
+  <h1 class="perfect text-center mt-lg-5 mt-md-2 mt-3 fs-1 fs-md-2 fs-lg-3" style="font-family: 'Times New Roman', Times, serif;">The Perfect Stay, Guaranteed</h1>
 
 
     
-    <div class="HOTEL-services d-flex flex-wrap justify-content-between align-items-center m-auto p-3" 
-    style="background-color: rgba(112, 227, 245, 0.12); width: 83%;">
+   
+
+  <div class="HOTEL-services d-flex flex-wrap justify-content-between align-items-center m-auto p-3 p-md-5"style="background-color: rgba(112, 227, 245, 0.12); width: 83%;">
   <!-- Text Section -->
-  <div class="HOTEL-services-text text-start mt-5 p-3 flex-grow-1">
+  <div class="HOTEL-services-text text-start mt- p-3 flex-grow-1">
    <!-- Header -->
    <div class="HOTEL-services-header">
      <h3>Hotel Features</h3>
@@ -1028,12 +1357,8 @@
 
 
 
- <section class="hero">
+ <section class="hero" style="margin-top: 8em;">
     <div class="hero-overlay">
-    
-
-      
-     
     </div>
   </section> 
 
@@ -1067,7 +1392,7 @@
 
 
 
-  <div class="container" style="margin-top: 9rem; height: 300px;">
+  <div class="container custom-margin" style="margin-top: 9rem; height: 300px;">
     <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
     <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner m-auto">
@@ -1117,11 +1442,11 @@
 
 
 
-    <footer class="footer" style="margin-top: 4em;">
+    <footer class="footer mt-5">
       <div class="container d-flex">
       
           <!-- Locate Us Section -->
-          <div class=" bg-white mt-4 col-lg-3 col-md-6 mb-4" style="height: 30em; width: 33%;">
+          <div class=" bg-white locate-content mt-4 col-lg-3 col-md-6 mb-4" style="height: 30em; width: 33%;">
               <div class="locate-content p-3 m-auto" style="height: 27em; width: 90%;">
                   <h3 style="font-size: 30px;">Locate Us</h3>
                   <button class="btn btn-sm w-50"  style="height: 10%;">View on Map</button>
@@ -1138,17 +1463,17 @@
           </div>
           
           <!-- About Us Section -->
-          <div class="col-lg-3 col-md-6 p-5 mb-4 d w-75 j">
+          <div class="col-lg-3 col-md-6  mb-4 w-100" style="text-align: start; margin-top: rem;">
   
-              <div class="calton-desp d-flex justify-content-between m-auto" style="font-size: smaller;  width: 80%; ">
+              <div class="calton-desp d-flex justify-content-between m-auto" style="font-size: smaller;  width: 100%; ">
   
                   <div class="calton-desp-img">
-                      <img src="images/6-5-e1626882432619.png" alt="The Wells Carlton Logo" class="img-fluid mb-3" style="max-width: 120px;">
+                      <img src="images/logoII (1).png" alt="The Wells Carlton Logo" class="img-fluid mb-3" style="max-width: 120px;">
                   </div>
-                 
+      
   
   
-                  <div class="calton-desp-p w-75">
+                  <div class="calton-desp-p">
                       <p>
                           The Wells Carlton Hotel & Apartments is a beautiful, fantasy-like journey into a glamorous world of pure
                           luxury, privacy, exceptional service, and gratifying indulgence. It is located in one of the most secured
@@ -1161,17 +1486,20 @@
   
           <!-- Connect With Us Section -->
   
-          <div class="connet-sec d-flex justify-content-between m-auto" style="height: 15em;">
+          <div class="connet-sec d-flex m-auto" style="height:40em;">
               <div class="">
                   <h3>Connect With Us</h3>
-                  <p><i class="fas fa-map-marker-alt"></i> 8 Gado Nasko Close, Off Jose Marti Str., Asokoro, Abuja.</p>
-                  <p><i class="fas fa-phone"></i> +234 908 187 9231</p>
-                  <p><i class="fas fa-envelope"></i> reservations@wellscarlton.com</p>
-                  <p>© 2022 The Wells Carlton Hotel & Apartment. Privacy Policy</p>
-                </div>
-        
+                  <div class="Connect-content" style="margin-top: -1.5rem;">
+                    <p><i class="fas fa-map-marker-alt"></i> 8 Gado Nasko Close, Off Jose Marti Str., Asokoro, Abuja.</p>
+                    <p><i class="fas fa-phone"></i> +234 908 187 9231</p>
+                    <p><i class="fas fa-envelope"></i> reservations@wellscarlton.com</p>
+                    <p>© 2022 The Wells Carlton Hotel & Apartment. Privacy Policy</p>
+                  </div>
+          
+                  </div>
+              
                 <!-- Useful Links Section -->
-                <div class="">
+                <div class="usefull-container;">
                   <h3>Useful Links</h3>
                   <ul>
                     <li><a href="#">Restaurant Menu</a></li>
@@ -1189,10 +1517,8 @@
           
         </div>
       </div>
-      <div id="scrollToTop" class="scroll-to-top">
-        &#8679; <!-- Unicode character for an upward arrow -->
-      </div>
     </footer>
+  
   
 
   
@@ -1247,6 +1573,9 @@ const images = document.querySelectorAll('.background-image');
 });
     </script>
 
+
+
+
 <script>
   // Wait until the DOM is fully loaded
   document.addEventListener("DOMContentLoaded", () => {
@@ -1270,6 +1599,37 @@ const images = document.querySelectorAll('.background-image');
     });
   });
 </script>
+
+<!-- Toggle Nav section -->
+
+<script>
+  // JavaScript for Navbar Toggle
+const toggleButton = document.getElementById("NavmenuToggle");
+const navLinks = document.getElementById("mainnavLinks");
+
+// Toggle the 'show' class on the nav links
+const toggleNav = () => {
+  navLinks.classList.toggle("show"); // Use 'show' to match the CSS class
+  toggleButton.classList.toggle("active");
+};
+
+// Event listener for the toggle button
+if (toggleButton) {
+  toggleButton.addEventListener("click", toggleNav);
+}
+
+// Optional: Close the nav menu when clicking on a link (for smaller screens)
+const navItems = document.querySelectorAll(".mainnav-links a");
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navLinks.classList.remove("show"); // Remove 'show' to hide the menu
+    toggleButton.classList.remove("active");
+  });
+});
+
+</script>
+
+
 
 
 

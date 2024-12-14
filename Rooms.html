@@ -14,6 +14,14 @@
         overflow: hidden;
         overflow-y: scroll;
       }
+      .parent-contaiin{
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+     
+    
+    }
+
         .header {
             background-color: #f8f9fa;
             padding: 10px;
@@ -42,6 +50,9 @@
 .contact-info a:hover {
   text-decoration: underline;
 }
+.responsive-title {
+  font-size: 4.5em; /* Default font size for larger screens */
+}
 
 @media (max-width: 768px) {
   .logo img {
@@ -62,26 +73,7 @@
 
 
  
-        .navbar a {
-            color: white;
-        }
-        nav.navbar {
-    height: 150px; /* Adjust the height of the navbar */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Use the imported font */
-}
 
-.navbar-nav .nav-link {
-    font-size: 2rem; /* Make text larger */
-    padding: 0.5rem 1rem; /* Add spacing for better aesthetics */
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff; /* Ensure links are visible on a dark background */
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #f0ad4e; /* Add a hover effect */
-}
 
         .contact-info {
             text-align: right;
@@ -93,9 +85,7 @@
         .contact-info p {
             margin: 0;
         }
-        .navbar-nav .nav-item {
-            margin-right: 15px;
-        }
+  
         .booking-bar {
             background-color: #f8f9fa;
             padding: 15px;
@@ -111,12 +101,7 @@
         .ratings div {
             text-align: center;
         }
-        .navbar {
-            background-color: #000000;
-        }
-        .navbar a {
-            color: white;
-        }
+        
         .contact-info {
             text-align: right;
             font-size: 0.9rem;
@@ -127,9 +112,148 @@
         .contact-info p {
             margin: 0;
         }
-        .navbar-nav .nav-item {
-            margin-right: 15px;
-        }
+        
+
+        .mainNv{
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  height: 130px;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Use the imported font */
+  
+}
+.mainNav-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ 
+}
+
+
+
+
+.logo img {
+  height: 50px;
+  display: none;
+}
+
+/* Nav Links */
+.mainnav-links {
+  list-style: none;
+  display: flex;
+justify-content: center;
+  gap: 2.5rem;
+ 
+  width: 100%;
+ 
+}
+
+.mainnav-links li a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2.6rem;
+  transition: color 0.3s;
+}
+.mainnav-links li a:hover {
+  color: #ff9f43;
+}
+.Navmenu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #ff9f43;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+  
+  
+}
+.Navmenu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+  
+  .mainNv {
+    padding: 1em;
+  
+    background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgb(12, 46, 179);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    top: 0; /* Ensure it sticks to the top */
+    width: 100%; /* Ensure full width */
+    z-index: 10; /* Higher z-index to stay above other content */
+}
+
+
+
+  .mainNav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .Navmenu-toggle {
+    display: flex;
+    background-color: #000;
+    
+    
+  }
+
+  .logo img {
+    display: block;
+  }
+
+  .mainnav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    flex-direction: column;
+    background: #000; /* Add background for visibility */
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 10; /* Above content but below toggle */
+    overflow-y: auto; /* Allow scrolling if the content overflows */
+  }
+
+  .mainnav-links.show {
+    right: 0; /* Make visible */
+  }
+  
+  .mainnav-links li {
+    margin: 1rem 0; /* Space between links */
+    font-size: 13px;
+  }
+  .mainnav-links li a{
+    font-size: 20px;
+  }
+
+   .booking-bar {
+    display: none;
+  }
+  
+
+}
+
         .booking-bar {
             background-color: #f8f9fa;
             padding: 15px;
@@ -223,69 +347,147 @@
     .room-card:hover #read-more-btn {
       display: block;
     }
- 
 
 
+    @media (max-width: 768px) {
+      .room-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid #ddd;
+    
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+      .room-card{
+        width: 90%;
+        height: 96%;
+        margin: auto;
+      }
+   
+      .room-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
             /* foootter */
 
-
-
             footer {
-      background-color: #d1e9eb;
-      
-      color: #333;
-      height: 33em;
+  background-color: #d1e9eb;
+  color: #333;
+  height: auto; /* Let the height adjust automatically for content */
+  padding: 20px 0;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+  padding: 20px 10px;
+}
+
+.footer .btn {
+  background-color: #6c5236;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+}
+
+.footer .btn:hover {
+  background-color: #523f2a;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #6c5236;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .col-lg-3 {
+  flex: 1 1 30%; /* Allow each column to take up 30% of available space and adjust as needed */
+  margin: 10px;
+}
+
+.footer .calton-desp,
+.footer .connet-sec {
+  flex-direction: column;
+}
+
+.footer .calton-desp,
+.footer .connet-sec,
+.footer .locate-content {
+  width: 100%; /* Ensure full width on smaller screens */
+}
+@media (max-width: 768px) {
+  .footer .col-lg-3 {
+    flex: 1 1 100%; /* Make each column take up the full width on smaller screens */
+  }
+  
+
+  .locate-content{
+    display: none;
+  }
+}
+
+   
+    @media (max-width: 768px){
+
+      .header{
+        display: none;
+      }
+      .responsive-title {
+        font-size: 38px;
+        color: #0764c8;
+        position: relative;
+        margin-top: 8rem; /* Add extra margin to account for the fixed nav height */
+     }
+ 
+
     }
 
-    .footer h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #000;
-      justify-content: start;
-      padding: 20px 10px;
-    }
-
-    .footer .btn {
-      background-color: #6c5236;
-      color: #fff;
-      border: none;
-      font-size: 14px;
-    }
-
-    .footer .btn:hover {
-      background-color: #523f2a;
-    }
-
-    .social-icons a {
-      margin-right: 10px;
-      font-size: 18px;
-      color: #333;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      color: #6c5236;
-    }
-
-    .footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer ul li {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .footer ul li a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    .footer ul li a:hover {
-      text-decoration: underline;
-    }
 
     </style>
 </head>
@@ -296,7 +498,9 @@
 
 <body>
 
+  <div class="parent-contaiin">
 
+  
   <header class="header container-fluid py-3">
     <div class="row align-items-center px-4">
       <!-- Logo Section -->
@@ -350,28 +554,42 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-nav sticky-nav">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto"> <!-- mx-auto centers the content -->
-          <li class="nav-item"><a class="nav-link" href="Rooms.html">Rooms</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-         
-          <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-          
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+<!-- navbar section -->
+
+<nav class="mainNv">
+  <div class="mainNav-container">
+  <!-- Logo -->
+  <a href="#" class="logo">
+    <img src="images/6-5-e1626882432619.png" alt="Logo">
+  </a>
+
+  <!-- Toggle Button -->
+  <button class="Navmenu-toggle" id="NavmenuToggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+
+  <!-- Navigation Links -->
+  <ul class="mainnav-links" id="mainnavLinks">
+    <li><a href="Rooms.html">Rooms</a></li>
+    <li><a href="#">Services</a></li>
+
+    <li><a href="#">Reviews</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
   </nav>
-  
-    <section class="container mt-5">
-        <h1 class="text-center">Rooms and Rates</h1>
+
+
+  <h1 class="text-center responsive-title mt-3 " style=" font-family: 'Times New Roman', Times, serif;">
+    Rooms and Rates
+  </h1>
+   <section class="container mt-5 d-none d-md-block">
+        
         <div class="booking-bar d-flex justify-content-between align-items-center sticky-navs">
             <input type="date" class="form-control w-25" placeholder="Check In">
             <input type="date" class="form-control w-25" placeholder="Check Out">
@@ -381,25 +599,21 @@
                 <option>2</option>
                 <option>3</option>
             </select>
-            <button class="btn btn-primary w-25"><a href="book.html" class="room-btn">Check Rooms</a</button>
+            <button class="btn btn-primary  w-25"><a href="book.html" class="room-btn">Check Rooms</a</button>
         </div>
+  </section>
 
 
         
 
-   
-     
-
-
-
-
         <!--    Room section -->
-          
+        
+      
 
-        <div class="container mt-5">
-            <div class="row g-5">
+        <div class="container mt-1">
+            <div class="row  g-5">
               <!-- Room Card -->
-              <div class="col-md-6 col-lg-4">
+              <div class="col-md-6 room-content col-lg-4">
                 <div class="room-card">
                   <img src="images/kkd_optimized.jpg" alt="Penthouse I">
                   <div class="card-body d-flex justify-content-between">
@@ -552,7 +766,7 @@
                 </div>
               </div>
             </div>
-          </div>
+        </div>
         
 
 
@@ -590,12 +804,17 @@
 
 
 
-    
-  <footer class="footer mt-5">
+   <!-- footer -->
+
+  
+
+
+
+   <footer class="footer mt-5">
     <div class="container d-flex">
     
         <!-- Locate Us Section -->
-        <div class=" bg-white mt-4 col-lg-3 col-md-6 mb-4" style="height: 30em; width: 33%;">
+        <div class=" bg-white locate-content mt-4 col-lg-3 col-md-6 mb-4" style="height: 30em; width: 33%;">
             <div class="locate-content p-3 m-auto" style="height: 27em; width: 90%;">
                 <h3 style="font-size: 30px;">Locate Us</h3>
                 <button class="btn btn-sm w-50"  style="height: 10%;">View on Map</button>
@@ -612,17 +831,17 @@
         </div>
         
         <!-- About Us Section -->
-        <div class="col-lg-3 col-md-6 p-5 mb-4 d w-75 j">
+        <div class="col-lg-3 col-md-6  mb-4 w-100" style="text-align: start; margin-top: rem;">
 
-            <div class="calton-desp d-flex justify-content-between m-auto" style="font-size: smaller;  width: 80%; ">
+            <div class="calton-desp d-flex justify-content-between m-auto" style="font-size: smaller;  width: 100%; ">
 
                 <div class="calton-desp-img">
                     <img src="images/logoII (1).png" alt="The Wells Carlton Logo" class="img-fluid mb-3" style="max-width: 120px;">
                 </div>
-               
+    
 
 
-                <div class="calton-desp-p w-75">
+                <div class="calton-desp-p">
                     <p>
                         The Wells Carlton Hotel & Apartments is a beautiful, fantasy-like journey into a glamorous world of pure
                         luxury, privacy, exceptional service, and gratifying indulgence. It is located in one of the most secured
@@ -635,17 +854,20 @@
 
         <!-- Connect With Us Section -->
 
-        <div class="connet-sec d-flex justify-content-between m-auto" style="height: 15em;">
+        <div class="connet-sec  d-flex m-auto" style="height:55rem;">
             <div class="">
                 <h3>Connect With Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 8 Gado Nasko Close, Off Jose Marti Str., Asokoro, Abuja.</p>
-                <p><i class="fas fa-phone"></i> +234 908 187 9231</p>
-                <p><i class="fas fa-envelope"></i> reservations@wellscarlton.com</p>
-                <p>© 2022 The Wells Carlton Hotel & Apartment. Privacy Policy</p>
-              </div>
-      
+                <div class="Connect-content" style="margin-top: -1.5rem;">
+                  <p><i class="fas fa-map-marker-alt"></i> 8 Gado Nasko Close, Off Jose Marti Str., Asokoro, Abuja.</p>
+                  <p><i class="fas fa-phone"></i> +234 908 187 9231</p>
+                  <p><i class="fas fa-envelope"></i> reservations@wellscarlton.com</p>
+                  <p>© 2022 The Wells Carlton Hotel & Apartment. Privacy Policy</p>
+                </div>
+        
+                </div>
+            
               <!-- Useful Links Section -->
-              <div class="">
+              <div class="usefull-container;">
                 <h3>Useful Links</h3>
                 <ul>
                   <li><a href="#">Restaurant Menu</a></li>
@@ -665,13 +887,41 @@
     </div>
   </footer>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
     
+<script>
+  // JavaScript for Navbar Toggle
+const toggleButton = document.getElementById("NavmenuToggle");
+const navLinks = document.getElementById("mainnavLinks");
+
+// Toggle the 'show' class on the nav links
+const toggleNav = () => {
+  navLinks.classList.toggle("show"); // Use 'show' to match the CSS class
+  toggleButton.classList.toggle("active");
+};
+
+// Event listener for the toggle button
+if (toggleButton) {
+  toggleButton.addEventListener("click", toggleNav);
+}
+
+// Optional: Close the nav menu when clicking on a link (for smaller screens)
+const navItems = document.querySelectorAll(".mainnav-links a");
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navLinks.classList.remove("show"); // Remove 'show' to hide the menu
+    toggleButton.classList.remove("active");
+  });
+});
+
+</script>
 
 
-   
+
+</div>
 </body>
 </html>
