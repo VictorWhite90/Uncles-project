@@ -133,11 +133,18 @@
   text-align: center;
 }
   .perfect{
-    font-size: 4.6em;
+   
     font-weight: 300;
     font-family: 'Times New Roman', Times, serif;
   }
-   
+  @media (max-width: 576px){
+    .perfect{
+    font-size: 2.5em;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+  }
+  }
     /* Carousel Container */
     .carousel-container {
       width: 79%;
@@ -259,10 +266,25 @@
   
     .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 4.4rem;
       margin-bottom: 2rem;
       color: #343a40; /* Dark text color */
     }
+
+    @media (max-width: 768px){
+
+.section-title {
+text-align: center;
+font-size: 2rem;
+margin-bottom: 2rem;
+margin-top: 1.5rem;
+color: #343540; /* Dark text color */
+font-style: italic;
+box-shadow: 0 4px 6px rgb(12, 46, 179); /* Adds a subtle shadow */
+
+}
+
+}
   
     /* Room Card Styling */
     .room-cards {
@@ -372,7 +394,69 @@
 .rare{
   margin: 7em auto;
 }
-        
+  
+@media (max-width: 768px){
+  .room-card{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgb(2, 16, 72); /* Adds a subtle shadow */
+}
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Adjust room card height and spacing */
+.rooms .room-card {
+  height: auto; /* Let the content dictate height */
+  margin-bottom: 1rem;
+}
+
+/* Adjust room image dimensions */
+.rooms .room-card img {
+  height: 250rem; /* Restrict image height */
+  object-fit: cover;
+  width: 100%; /* Ensure the image takes the full width */
+}
+
+/* Reduce padding and margins in room details */
+.rooms .room-details {
+  height: 12em;
+  padding: 1rem;
+  
+  
+}
+
+.rooms .room-details h2 {
+  font-size: 15px;
+ font-weight: bold;
+  text-align: start;
+  background-color: #007bff;
+}
+
+.rooms .room-details p {
+  font-size: 0.9rem;
+}
+
+.rooms .room-details-price .price {
+  font-size: 1.5rem;
+}
+
+.rooms .room-details-btn button {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  margin-top: -1px;
+  
+}
+
+
+.room-icons .icon i {
+font-size: 1.1rem;  /* Reduce the size for mobile screens */
+color: rgb(27, 61, 250);
+}
+}
+
+
 
 /* General Layout */
 .HOTEL-services {
@@ -402,7 +486,11 @@
   max-width: 100%;
   height: auto; /* Maintain aspect ratio */
 }
-
+@media (max-width: 768px){
+  .HOTEL-services{
+    box-shadow: 0 4px 6px rgb(2, 16, 72); /* Adds a subtle shadow */
+  }
+}
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
 
@@ -428,9 +516,7 @@
   {
     margin-top: -7em;
   }
-  .footer{
-    margin-top: em;
-  }
+
 
   .locate-us{
     display: none;
@@ -510,7 +596,7 @@
     position: relative;
     z-index: 2; /* Ensures the About section appears in front of the Hero section */
     margin-top: -15rem; /* Overlaps the Hero section */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgb(2, 16, 72); /* Adds a subtle shadow */
     border-radius: 10px;
   }
   
@@ -581,7 +667,7 @@
   }
   .whatsapp-link {
                 position: fixed;
-                bottom: 20px;
+                bottom: 100px;
                 left: 20px;
             } 
 
@@ -596,6 +682,7 @@
     width: 100%;
     height: 100%;
     display: block;
+    
   }
   
   .play-button {
@@ -722,6 +809,9 @@
   .footer .col-lg-3 {
     flex: 1 1 100%; /* Make each column take up the full width on smaller screens */
   }
+  .footer{
+    margin-top: -2em;
+  }
   
 
   .locate-content{
@@ -832,11 +922,14 @@ justify-content: center;
 
 @media (max-width: 768px) {
   .mainNv {
-    padding: 1em;
-    background: #fcf9f9;
-    
-   
-  }
+  padding: 1em;
+  background: #fcf9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgb(12, 46, 179);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+ 
+}
   .mainNav-container {
     display: flex;
     justify-content: space-between;
@@ -846,7 +939,7 @@ justify-content: center;
 
   .Navmenu-toggle {
     display: flex;
-    background-color: #000;
+    background-color: rgb(0, 94, 255);
     
     
   }
@@ -916,9 +1009,7 @@ justify-content: center;
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
-    .rooms .section-title {
-      font-size: 1rem;
-    }
+   
 
     /* Adjust room card height and spacing */
     .rooms .room-card {
@@ -941,9 +1032,6 @@ justify-content: center;
       
     }
 
-    .rooms .room-details h2 {
-      font-size: 1.8rem;
-    }
 
     .rooms .room-details p {
       font-size: 0.9rem;
@@ -1035,6 +1123,30 @@ justify-content: center;
     background-color: #f0f8ff; /* Original blue again */
   }
 }
+
+.bottomBook-now {
+            position: fixed; /* Fix the button at the bottom of the viewport */
+            bottom: 0; /* Position it at the bottom */
+            left: 0;
+            width: 100%; /* Full width */
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            text-align: center; /* Center the text */
+            padding: 15px 0; /* Padding for better touch experience */
+            font-size: 18px; /* Font size */
+            font-weight: bold; /* Bold text */
+            text-decoration: none; /* Remove underline */
+            z-index: 9999; /* Ensure it appears above all other content */
+            display: none; /* Initially hidden */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+        }
+
+        /* Show the button only on mobile screens */
+        @media (max-width: 768px) {
+            .bottomBook-now {
+                display: block; /* Display the button on mobile */
+            }
+        }
  
     </style>
 
@@ -1172,7 +1284,7 @@ justify-content: center;
 
 
     <section class="rooms">
-      <h1 class="section-title" style=" font-size: 2.8rem; font-family: 'Times New Roman', Times, serif;">Rooms & Rates</h1>
+      <h1 class="section-title" style=" font-family: 'Times New Roman', Times, serif;">Rooms & Rates</h1>
       <div class="room-cards">
         <!-- Deluxe Room -->
         <div class="room-card">
@@ -1441,7 +1553,6 @@ justify-content: center;
   
 
 
-
     <footer class="footer mt-5">
       <div class="container d-flex">
       
@@ -1486,7 +1597,7 @@ justify-content: center;
   
           <!-- Connect With Us Section -->
   
-          <div class="connet-sec d-flex m-auto" style="height:40em;">
+          <div class="connet-sec  d-flex m-auto" style="height:55rem;">
               <div class="">
                   <h3>Connect With Us</h3>
                   <div class="Connect-content" style="margin-top: -1.5rem;">
@@ -1518,6 +1629,8 @@ justify-content: center;
         </div>
       </div>
     </footer>
+     <!-- Fixed "Book Now" Button -->
+     <a href="#book" class="bottomBook-now">Book Now</a>
   
   
 
