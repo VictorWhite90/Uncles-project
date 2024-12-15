@@ -229,7 +229,7 @@
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgb(17, 17, 137);
     }
 
     /* Responsive Design  mobile*/
@@ -275,9 +275,10 @@
 
 .section-title {
 text-align: center;
-font-size: 2rem;
+font-size: 2.5rem;
 margin-bottom: 2rem;
 margin-top: 1.5rem;
+font-weight: 700;
 color: #343540; /* Dark text color */
 font-style: italic;
 box-shadow: 0 4px 6px rgb(12, 46, 179); /* Adds a subtle shadow */
@@ -428,14 +429,14 @@ box-shadow: 0 4px 6px rgb(12, 46, 179); /* Adds a subtle shadow */
 }
 
 .rooms .room-details h2 {
-  font-size: 15px;
+  font-size: 25px;
  font-weight: bold;
   text-align: start;
-  background-color: #007bff;
+ 
 }
 
 .rooms .room-details p {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .rooms .room-details-price .price {
@@ -445,7 +446,7 @@ box-shadow: 0 4px 6px rgb(12, 46, 179); /* Adds a subtle shadow */
 .rooms .room-details-btn button {
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
-  margin-top: -1px;
+  margin-top: px;
   
 }
 
@@ -979,11 +980,11 @@ justify-content: center;
   .background-container {
     flex-direction: column; /* Stack items vertically on smaller screens */
     background: #000;
-    height: 200px;
+    height: 540px;
   }
 
-  .background-image {
-    height: 200px; /* Adjust height for smaller screens */
+  .background-image image {
+    height: 100%; /* Adjust height for smaller screens */
   }
 
   .overlay-content {
@@ -1007,7 +1008,7 @@ justify-content: center;
     }
     .room-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 6px rgb(12, 46, 179);
     }
    
 
@@ -1019,14 +1020,14 @@ justify-content: center;
 
     /* Adjust room image dimensions */
     .rooms .room-card img {
-      height: 200px; /* Restrict image height */
+      height: 270px; /* Restrict image height */
       object-fit: cover;
       width: 100%; /* Ensure the image takes the full width */
     }
 
     /* Reduce padding and margins in room details */
     .rooms .room-details {
-      height: 14em;
+      height: 13em;
       padding: 1rem;
       
       
@@ -1044,7 +1045,7 @@ justify-content: center;
     .rooms .room-details-btn button {
       font-size: 0.9rem;
       padding: 0.5rem 1rem;
-      margin-top: px;
+      margin-top: em;
     }
 
     .room-icons .icon i {
@@ -1284,7 +1285,7 @@ justify-content: center;
 
 
     <section class="rooms">
-      <h1 class="section-title" style=" font-family: 'Times New Roman', Times, serif;">Rooms & Rates</h1>
+      <h1 class="section-title" style=" font-family: 'Times New Roman', Times, serif;">Apartments</h1>
       <div class="room-cards">
         <!-- Deluxe Room -->
         <div class="room-card">
@@ -1506,7 +1507,7 @@ justify-content: center;
 
   <div class="container custom-margin" style="margin-top: 9rem; height: 300px;">
     <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
-    <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 20em;">
         <div class="carousel-inner m-auto">
             <div class="carousel-item active">
                 <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
@@ -1529,13 +1530,16 @@ justify-content: center;
                 <p class="review-author">- James</p>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+
+        <button class="carousel-control-prev m-auto" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev" 
+        style=" height: max-content;">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+        <button class="carousel-control-next m-auto" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next"
+        style="height: max-content; background-color: blue;">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden" >Next</span>
         </button>
     </div>
 </div>
