@@ -132,6 +132,7 @@
   height: 130px;
   font-family: Georgia, 'Times New Roman', Times, serif; /* Use the imported font */
   
+  
 }
 .mainNav-container{
   display: flex;
@@ -175,23 +176,21 @@ justify-content: center;
   display: none;
   flex-direction: column;
   gap: 5px;
-  background-color: #ff4343;
+  background: none;
   border: none;
   cursor: pointer;
   z-index: 11;
-  
   
 }
 .Navmenu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: rgb(9, 76, 222);
   transition: all 0.3s ease;
 }
 /* Responsive Design */
 
 @media (max-width: 768px) {
-
   .mainNv {
   padding: 1em;
   background: #fcf9f9;
@@ -201,6 +200,7 @@ justify-content: center;
 
  
 }
+
   .mainNav-container {
     display: flex;
     justify-content: space-between;
@@ -210,17 +210,14 @@ justify-content: center;
 
   .Navmenu-toggle {
     display: flex;
-    background-color: rgb(0, 94, 255);
+    background-color: rgb(247, 248, 250);
+    
     
     
   }
 
   .logo img {
     display: block;
-  }
-  .logo a{
-    position: relative;
-    z-index: 10;
   }
 
   .mainnav-links {
@@ -249,7 +246,6 @@ justify-content: center;
   .mainnav-links li a{
     font-size: 20px;
   }
-
 
 
    .booking-bar {
@@ -523,7 +519,7 @@ justify-content: center;
         position: relative;
         font-weight: 700;
         box-shadow: 0 4px 6px rgb(12, 46, 179); /* Adds a subtle shadow */
-        width: 17rem;
+        width: 19rem;
           margin: auto;
         font-style: italic;
         margin-top: 2rem; /* Add extra margin to account for the fixed nav height */
@@ -693,7 +689,7 @@ justify-content: center;
 
   <!-- Toggle Button -->
   <button class="Navmenu-toggle" id="NavmenuToggle">
-    <span class="bar"></span>
+    
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
@@ -702,9 +698,9 @@ justify-content: center;
 
   <!-- Navigation Links -->
   <ul class="mainnav-links" id="mainnavLinks">
+    <li><a href="index.html">Home</a></li>
     <li><a href="Rooms.html">Rooms</a></li>
     <li><a href="#">Services</a></li>
-
     <li><a href="#">Reviews</a></li>
     <li><a href="#">Gallery</a></li>
     <li><a href="#">Contact</a></li>

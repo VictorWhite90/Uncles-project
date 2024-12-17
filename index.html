@@ -482,6 +482,7 @@ color: rgb(27, 61, 250);
   flex: 1; /* Take up equal space */
   font-family: 'Times New Roman', Times, serif;
   max-width: 50%; /* Limit width to 50% */
+  
 }
 
 /* Image Section */
@@ -502,8 +503,19 @@ color: rgb(27, 61, 250);
   .HOTEL-services{
     box-shadow: 0 4px 6px rgb(2, 16, 72); /* Adds a subtle shadow */
   }
-  .HOTEL-services-image image{
-    width: 100rem;
+
+  .HOTEL-services-text {
+    max-width: 100%; /* Allow the text section to take up the full width */
+    text-align: center; /* Center-align the text for a clean mobile look */
+    margin-bottom: 20px; /* Add spacing below the text section */
+  }
+  .HOTEL-services-image {
+    justify-content: center; /* Center the image section */
+  }
+  .HOTEL-services-image img {
+    width: 100%; /* Ensure the image scales to fit the container */
+    max-width: 400px; /* Optional: limit the maximum image size for better display */
+    height: auto; /* Maintain the aspect ratio */
   }
 }
 /* Responsive Breakpoints */
@@ -746,6 +758,7 @@ color: rgb(27, 61, 250);
   color: #333;
   height: 64rem; /* Let the height adjust automatically for content */
   padding: 20px 0;
+  margin-top: 7rem;
 }
 
 .footer .container {
@@ -947,6 +960,7 @@ justify-content: center;
 
  
 }
+
   .mainNav-container {
     display: flex;
     justify-content: space-between;
@@ -1287,6 +1301,7 @@ justify-content: center;
 
     <!-- Navigation Links -->
     <ul class="mainnav-links" id="mainnavLinks">
+     
       <li><a href="Rooms.html">Rooms</a></li>
       <li><a href="#">Services</a></li>
 
@@ -1476,16 +1491,16 @@ justify-content: center;
 
   <div class="HOTEL-services d-flex flex-wrap justify-content-between align-items-center m-auto p-3 p-md-5"style="background-color: rgba(112, 227, 245, 0.12); width: 95%;">
   <!-- Text Section -->
-  <div class="HOTEL-services-text text-start mt- p-3 flex-grow-1">
+  <div class="HOTEL-services-text text-start mt- p-3">
    <!-- Header -->
    <div class="HOTEL-services-header">
      <h3>Hotel Features</h3>
    </div>
   
    <!-- Features List -->
-   <div class="Hotel-Features-parag d-flex flex-wrap mt-3">
+   <div class=" d-flex flex-wrap mt-3">
      <div class="Hotel-Features-parag-first me-4">
-       <ul>
+       <ul>Hotel-Features-parag
          <li>Monday – Thursday:  <span>10AM to 6PM</span></li>
          <li>Friday – Saturday: <span>11AM to 4PM</span></li>
          <li>Sunday: <span class="highlight">Close</span></li>
@@ -1565,7 +1580,7 @@ justify-content: center;
 
 
 
-  <div class="container custom-margin" style="margin-top: 9rem; height: 300px;">
+  <div class="container custom-margin" style="margin-top: 9rem; height: 380px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
     <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
     <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 20em;">
         <div class="carousel-inner m-auto">
