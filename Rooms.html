@@ -273,6 +273,51 @@ justify-content: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* card animation starting point */
+    
+/* Animated border effect */
+.room-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px; /* Match the card's corner radius */
+  border: 4px solid transparent; /* Transparent border to hold the animation */
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple, red);
+  background-size: 200% 200%; /* Expand gradient for smooth animation */
+  z-index: 1; /* Ensure it's above the card background */
+  animation: border-animation 4s linear infinite;
+  pointer-events: none; /* Prevent interference with user interaction */
+}
+
+@keyframes border-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Ensure the card content stays inside the animated border */
+.room-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2; /* Above the border animation */
+}
+
+.card-body {
+  padding: 1rem;
+  position: relative;
+  z-index: 2; /* Above the border animation */
+}
+/* card animation end point */
+
+
     .room-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);

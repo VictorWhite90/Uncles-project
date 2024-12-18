@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        
+    
+    </div>
+
+    <style>
+        .rotating-border {
+    padding: 2px 3px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    position: relative;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0707ff, #ff00ff);
+    background-size: 200%;
+    animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100%50%;
+}
+}
+    </style>
+
+</body>
+</html>
