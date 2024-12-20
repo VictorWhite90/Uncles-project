@@ -393,6 +393,36 @@ box-shadow: 0 4px 6px rgb(12, 46, 179); /* Adds a subtle shadow */
       width: 195px;
       
     }
+    
+    .room-details button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #d50756;
+    box-sizing: border-box;
+    animation: moving-border 4s linear infinite;
+  }
+  
+  @keyframes moving-border {
+    0% {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 3%, 0% 3%);
+    }
+    25% {
+      clip-path: polygon(97% 0%, 100% 0%, 100% 100%, 97% 100%);
+    }
+    50% {
+      clip-path: polygon(0% 97%, 100% 97%, 100% 100%, 0% 100%);
+    }
+    75% {
+      clip-path: polygon(0% 0%, 3% 0%, 3% 100%, 0% 100%);
+    }
+    100% {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 3%, 0% 3%);
+    }
+  }
   
     .room-details .btn a {
       text-decoration: none;
@@ -646,7 +676,9 @@ color: rgb(27, 61, 250);
     box-shadow: 0 4px 6px rgb(2, 16, 72); /* Adds a subtle shadow */
     border-radius: 10px;
   }
-  
+  .aboutx button a{
+    color: #000;
+  }
   .aboutx-container {
     
     width: 100%;
@@ -663,6 +695,22 @@ color: rgb(27, 61, 250);
     background-color: #0d9cd4;
     height: 100%;
     padding: 2em;
+  }
+  .aboutx-btn{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 4rem;
+    width: 14rem;
+    border: none;
+    margin-top: 4em;
+    box-shadow: 0 4px 6px rgb(12, 46, 179);
+    border-radius: 2em;
+    animation: animated-shadow 3.5s infinite ease-in-out; /* Add continuous animation */
+    
+  }
+  .aboutx-btn a{
+    color: #000000;
+    text-decoration: none;
   }
   
   .about-content h4 {
@@ -682,23 +730,8 @@ color: rgb(27, 61, 250);
     font-size: 14px;
     line-height: 1.6;
   }
-  .aboutx button{
-    background-color: black;
-    color: white;
-    margin-top: 3em;
-    width: 15em;
-    height: 4em;
-    border-radius: 8px;
-    border: none;
-    text-align: center;
-  }
-  .aboutx button a{
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-  }
-
+  
+ 
  
 
 
@@ -716,11 +749,13 @@ color: rgb(27, 61, 250);
                 position: fixed;
                 bottom: 100px;
                 left: 20px;
+                z-index: 500;
             } 
 
             .whatsapp-link img {
                 width: 50px;
                 height: 50px;
+                
             } 
 
   
@@ -764,6 +799,7 @@ color: rgb(27, 61, 250);
             font-weight: bold;
         }
         .customers-header{
+          padding: 1em;
           font-weight: bold;
           font-style: italic;
           font-family: 'Times New Roman', Times, serif;
@@ -947,6 +983,22 @@ justify-content: center;
   font-size: 2.6rem;
   transition: color 0.3s;
 }
+.closeNav-toggle {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.mainnav-links.show .closeNav-toggle {
+  display: block; /* Show the button when menu is visible */
+}
 .mainnav-links li a:hover {
   color: #ff9f43;
 }
@@ -963,14 +1015,14 @@ justify-content: center;
 .Navmenu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #007BFF;
   transition: all 0.3s ease;
 }
 /* Responsive Design */
 
 @media (max-width: 768px) {
   .mainNv {
-  padding: 1em;
+  padding: em;
   background: #fcf9f9;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgb(12, 46, 179);
@@ -983,12 +1035,13 @@ justify-content: center;
     display: flex;
     justify-content: space-between;
     width: 100%;
+
     
   }
 
   .Navmenu-toggle {
     display: flex;
-    background-color: rgb(0, 94, 255);
+    background: #fcf9f9;
     
     
   }
@@ -1008,10 +1061,10 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     transition: right 0.3s ease-in-out;
-    z-index: 10; /* Above content but below toggle */
+    z-index: 19; /* Above content but below toggle */
     overflow-y: auto; /* Allow scrolling if the content overflows */
   }
-
+  
   .mainnav-links.show {
     right: 0; /* Make visible */
   }
@@ -1196,6 +1249,7 @@ justify-content: center;
         @media (max-width: 768px) {
             .btn-book {
                 display: block; /* Display the button on mobile */
+                
             }
         }
 
@@ -1248,7 +1302,7 @@ justify-content: center;
   <div class="parent-contaiin">
 
 
-    <header class="header container-fluid py-3">
+    <header class="header container-fluid">
       <div class="row align-items-center px-4">
         <!-- Logo Section -->
         <div class="col-12 col-md-4 text-center text-md-start">
@@ -1302,33 +1356,32 @@ justify-content: center;
     <!-- navbar section -->
 
     <nav class="mainNv">
-    <div class="mainNav-container">
-    <!-- Logo -->
-    <a href="#" class="logo">
-      <img src="images/6-5-e1626882432619.png" alt="Logo">
-    </a>
-
-    <!-- Toggle Button -->
-    <button class="Navmenu-toggle" id="NavmenuToggle">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-
-
-    <!-- Navigation Links -->
-    <ul class="mainnav-links" id="mainnavLinks">
-     
-      <li><a href="Rooms.html">Rooms</a></li>
-      <li><a href="#">Services</a></li>
-
-      <li><a href="#">Reviews</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
+      <div class="mainNav-container">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <img src="images/6-5-e1626882432619.png" alt="Logo">
+        </a>
+    
+        <!-- Toggle Button -->
+        <button class="Navmenu-toggle" id="NavmenuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+         
+        </button>
+    
+        <!-- Navigation Links -->
+        <ul class="mainnav-links" id="mainnavLinks">
+          <button class="closeNav-toggle" id="closeNavToggle">✕</button>
+          <li><a href="Rooms.html">Rooms</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
     </nav>
+    
 
 
     <div class="container-fluid sliderimages p-0">
@@ -1407,7 +1460,7 @@ justify-content: center;
               </div>
               
               <div class="room-details-btn mt-5">
-                <button class="btn bg-primary"><a href="Rooms.html">Book Now</a></button>
+                <button class="btn bg-primary"><a href="Rooms.html">Check Now</a></button>
               </div>
               
             </div>
@@ -1446,7 +1499,7 @@ justify-content: center;
               </div>
               
               <div class="room-details-btn mt-5">
-                <button class="btn bg-primary"><a href="Rooms.html">Book Now</a></button>
+                <button class="btn bg-primary"><a href="Rooms.html">Check Now</a></button>
               </div>
               
             </div>
@@ -1485,7 +1538,7 @@ justify-content: center;
               </div>
               
               <div class="room-details-btn mt-5">
-                <button class="btn bg-primary"><a href="Rooms.html">Book Now</a></button>
+                <button class="btn bg-primary"><a href="Rooms.html">Check Now</a></button>
               </div>
               
             </div>
@@ -1544,11 +1597,11 @@ justify-content: center;
      </div>
      <div class="room-features-icon d-flex justify-content-between align-items-center mt-3" style="width: 150px;">
        <div class="room-features-icon-1 text-center">
-         <i class="fas fa-wifi fa-2x"></i>
+         <i class="fas fa-wifi fa-2x" style="color: blue;"></i>
          <p>Free Wi-Fi</p>
        </div>
        <div class="room-features-icon-4 text-center">
-         <i class="fas fa-wine-glass fa-2x"></i>
+         <i class="fas fa-wine-glass fa-2x" style="color: rgba(255, 0, 0, 0.635);"></i>
          <p>Minibar</p>
        </div>
      </div>
@@ -1579,7 +1632,7 @@ justify-content: center;
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum quod ducimus quasi harum ratione voluptas deleniti distinctio facere autem blanditiis.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, autem!
         </p>
-        <button class=" align-items-center"><a href="Rooms.html" style="text-align: center;"><p>Book an Apartment now</p></a></button>
+        <button class="aboutx-btn "><a href="Rooms.html">Book an Apartment now</a></button>
       </div>
 
       <div class="about-image">
@@ -1599,44 +1652,46 @@ justify-content: center;
 
 
 
-  <div class="container custom-margin" style="margin-top: 9rem; height: 380px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
-    <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
-    <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 20em;">
-        <div class="carousel-inner m-auto">
-            <div class="carousel-item active">
-                <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
-                <p class="review-author">- Solange, New Zealand</p>
-            </div>
-            <div class="carousel-item">
-                <p class="review-text">"The location is fantastic; it's in the middle of everywhere. It's easily accessible and easy to describe to guests visiting. The complimentary breakfast is also a nice concept in addition to the self-serviced kitchen in the apartment."</p>
-                <p class="review-author">- Shirley</p>
-            </div>
-            <div class="carousel-item">
-                <p class="review-text">"Exceptional hospitality! The rooms were clean, spacious, and equipped with everything we needed. The staff were so friendly and made sure all our needs were met. Definitely coming back!"</p>
-                <p class="review-author">- Alex</p>
-            </div>
-            <div class="carousel-item">
-                <p class="review-text">"Loved the vibe and atmosphere! The decor was modern, and the services were beyond my expectations. A perfect getaway destination. Highly recommended!"</p>
-                <p class="review-author">- Priya</p>
-            </div>
-            <div class="carousel-item">
-                <p class="review-text">"Conveniently located, comfortable rooms, and outstanding customer care. The entire experience felt personalized and memorable. Kudos to the team!"</p>
-                <p class="review-author">- James</p>
-            </div>
-        </div>
+  <section>
 
-        <button class="carousel-control-prev m-auto" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev" 
-        style=" height: max-content;">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next m-auto" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next"
-        style="height: max-content; background-color: blue;">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden" >Next</span>
-        </button>
+    <div class="container" style="margin-top: 2rem; height: 380px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
+        <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
+        <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner m-auto">
+                <div class="carousel-item active">
+                    <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
+                    <p class="review-author">- Solange, New Zealand</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="review-text">"The location is fantastic; it's in the middle of everywhere. It's easily accessible and easy to describe to guests visiting. The complimentary breakfast is also a nice concept in addition to the self-serviced kitchen in the apartment."</p>
+                    <p class="review-author">- Shirley</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="review-text">"Exceptional hospitality! The rooms were clean, spacious, and equipped with everything we needed. The staff were so friendly and made sure all our needs were met. Definitely coming back!"</p>
+                    <p class="review-author">- Alex</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="review-text">"Loved the vibe and atmosphere! The decor was modern, and the services were beyond my expectations. A perfect getaway destination. Highly recommended!"</p>
+                    <p class="review-author">- Priya</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="review-text">"Conveniently located, comfortable rooms, and outstanding customer care. The entire experience felt personalized and memorable. Kudos to the team!"</p>
+                    <p class="review-author">- James</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
-</div>
+    
+
+</section>
 
 
   
@@ -1902,26 +1957,31 @@ const images = document.querySelectorAll('.background-image');
 
 <script>
   // JavaScript for Navbar Toggle
+// JavaScript for Navbar Toggle
 const toggleButton = document.getElementById("NavmenuToggle");
+const closeNavButton = document.getElementById("closeNavToggle");
 const navLinks = document.getElementById("mainnavLinks");
 
-// Toggle the 'show' class on the nav links
+// Function to show or hide the navigation menu
 const toggleNav = () => {
-  navLinks.classList.toggle("show"); // Use 'show' to match the CSS class
-  toggleButton.classList.toggle("active");
+  navLinks.classList.toggle("show");
 };
 
-// Event listener for the toggle button
+// Event listener for the main toggle button
 if (toggleButton) {
   toggleButton.addEventListener("click", toggleNav);
+}
+
+// Event listener for the close button inside the menu
+if (closeNavButton) {
+  closeNavButton.addEventListener("click", toggleNav);
 }
 
 // Optional: Close the nav menu when clicking on a link (for smaller screens)
 const navItems = document.querySelectorAll(".mainnav-links a");
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
-    navLinks.classList.remove("show"); // Remove 'show' to hide the menu
-    toggleButton.classList.remove("active");
+    navLinks.classList.remove("show");
   });
 });
 
