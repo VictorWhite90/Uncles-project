@@ -223,13 +223,33 @@
     /* Carousel Controls */
     .carousel-control-prev,
     .carousel-control-next {
+      justify-content: center;
+      align-items: center;
       width: 5%;
+      height: 3rem;
+      margin: auto;
+      background-color: #0056b3;
       z-index: 10;
     }
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
+      justify-content: center;
+      align-items: center;
       background-color: rgb(17, 17, 137);
+      margin: auto;
+    
+    }
+    .customers-review .carousel-control-prev{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:  auto;
+      position: absolute;
+     
+    }
+    .customers-review .carousel-control-next{
+   
     }
 
     /* Responsive Design  mobile*/
@@ -794,6 +814,13 @@ color: rgb(27, 61, 250);
             font-size: 1.2rem;
             font-style: italic;
         }
+        .carousel-inner {
+    height: 300px; /* Adjust based on the tallest slide content */
+    display: flex;
+    align-items: center; /* Center-align the content vertically */
+}
+
+    
         .review-author {
             margin-top: 1rem;
             font-weight: bold;
@@ -1251,6 +1278,7 @@ justify-content: center;
                 display: block; /* Display the button on mobile */
                 
             }
+    
         }
 
 
@@ -1261,6 +1289,7 @@ justify-content: center;
   align-items: center; /* Center vertically (optional) */
   margin: auto; /* Centers horizontally if a width is set */
   text-align: center; /* Ensures alignment for inline elements */
+  
 }
 /* Hide the map by default */
 .mobileMap {
@@ -1275,10 +1304,10 @@ justify-content: center;
   .mobileMap {
     display: block; /* Visible on mobile screens */
     text-align: center; /* Center align for better appearance */
-    margin-top: rem;
     margin: auto;
     justify-content: center;
     height: 400px;
+    margin-top: 3rem;
 
   }
 
@@ -1654,8 +1683,8 @@ justify-content: center;
 
   <section>
 
-    <div class="container" style="margin-top: 2rem; height: 380px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
-        <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
+    <div class="container customers-review" style="margin-top: 2rem; height: 430px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
+        <h1 class=" customers-header text-center mb-4">Customers Review</h1>
         <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner m-auto">
                 <div class="carousel-item active">
