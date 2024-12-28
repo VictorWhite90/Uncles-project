@@ -210,6 +210,7 @@ justify-content: center;
         }
 
         /* carousel */
+     
          .carousel-inner img {
            width: 100%;
             height: 700px;
@@ -500,10 +501,21 @@ justify-content: center;
             font-weight: bold;
         }
         .customers-header{
+         
+          padding-top: 1em;
           font-weight: bold;
           font-style: italic;
           font-family: 'Times New Roman', Times, serif;
         }
+        .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgb(17, 17, 137);
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+      z-index: 10;
+    }
 
         .property-card{
           box-shadow: 0 4px 6px rgb(3, 24, 210);
@@ -691,7 +703,7 @@ justify-content: center;
     /* Mobile Dev */
     #penthouse-title {
     margin: 0 auto;
-    width: 9em;
+    width: 14em;
     font-weight: 900;
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
@@ -703,8 +715,8 @@ justify-content: center;
     @media (max-width: 768px){
 
       #penthouse-title {
-      width: 8.3em; /* Allows flexibility */
-      font-size: 34px; /* Slightly smaller font */
+      width: 11.3em; /* Allows flexibility */
+      font-size:27px; /* Slightly smaller font */
       box-shadow: 0 3px 5px rgb(3, 24, 210); /* Subtle shadow for smaller screens */
       font-style: italic;
     }
@@ -756,21 +768,19 @@ justify-content: center;
     font-size: 24px; /* Default font size */
     color: #333;
 }
-.carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: rgb(17, 17, 137);
-    }
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 5%;
-      z-index: 10;
-    }
-.other-properties{
-  width: 20rem;
-  height: 3rem;
-  margin: auto;
-  box-shadow: 0 4px 6px rgba(3, 24, 210, 0.853);
-  font-style: italic;
+
+.other-properties {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Ensure text inside the div is centered */
+  box-shadow: 0 4px 6px rgb(12, 46, 179); /* Keep existing box shadow */
+  height: 100px; /* Adjust height as needed to center vertically */
+  width: 100%; /* Optional: make the div take up the full width */
+}
+
+.other-properties h3 {
+  margin: 0; /* Remove default margin to center perfectly */
 }
 /* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
@@ -820,6 +830,7 @@ justify-content: center;
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
+            animation: animated-shadow 3.5s infinite ease-in-out;
         }
         .features-mobile ul{
             font-size: 13px;
@@ -829,7 +840,7 @@ justify-content: center;
             width: 85%;
             height: 3em;
             text-align: center;
-            margin-top: 2em;
+            margin-top: 1em;
             font-size: 19px;
 
            
@@ -862,28 +873,7 @@ justify-content: center;
             }
         }
 
-
-
-
-        @keyframes moving-border {
-    0% {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 3%, 0% 3%);
-    }
-    25% {
-      clip-path: polygon(97% 0%, 100% 0%, 100% 100%, 97% 100%);
-    }
-    50% {
-      clip-path: polygon(0% 97%, 100% 97%, 100% 100%, 0% 100%);
-    }
-    75% {
-      clip-path: polygon(0% 0%, 3% 0%, 3% 100%, 0% 100%);
-    }
-    100% {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 3%, 0% 3%);
-    }
-  }
-
-  
+        
 @keyframes animated-shadow {
   0% {
     box-shadow: 2px 4px 9px rgba(247, 8, 167, 0.821);
@@ -901,6 +891,9 @@ justify-content: center;
     box-shadow: 3px 8px 11px rgba(250, 5, 5, 0.883);
   }
 }
+
+
+
 
 
 
@@ -980,7 +973,7 @@ justify-content: center;
               <ul class="mainnav-links" id="mainnavLinks">
                 <button class="closeNav-toggle" id="closeNavToggle">✕</button>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="Rooms.html">Apartments</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Gallery</a></li>
@@ -992,7 +985,7 @@ justify-content: center;
           
 
     <section class="container mt-5">
-      <h1 class="text-center penthouse" id="penthouse-title">Penthouse 3</h1>
+      <h1 class="text-center penthouse" id="penthouse-title">Classic  Studio Apartment</h1>
 
         <div class="booking-bar  justify-content-between align-items-center">
             <input type="date" class="form-control w-25" placeholder="Check In">
@@ -1012,22 +1005,22 @@ justify-content: center;
         <div id="roomCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item active">
-                  <img src="images/WhatsApp Image 2024-12-03 at 14.58.12_18b2a0c8.jpg" class="d-block w-100" alt="Room 1">
+                  <img src="images/Apo-1.jpeg" class="d-block w-100" alt="Room 1">
               </div>
               <div class="carousel-item">
-                  <img src="images/AP2-845x563.jpg.webp" class="d-block w-100" alt="Room 2">
+                  <img src="images/kkd_optimized.jpg" class="d-block w-100" alt="Room 2">
               </div>
               <div class="carousel-item">
-                  <img src="images/AP4-845x563.jpg.webp" class="d-block w-100" alt="Room 3">
+                  <img src="images/kss_optimized.jpg" class="d-block w-100" alt="Room 3">
               </div>
               <div class="carousel-item">
-                  <img src="images/AP5-845x563.jpg.webp" class="d-block w-100" alt="Room 4">
+                  <img src="images/plesant4.jpg" class="d-block w-100" alt="Room 4">
               </div>
               <div class="carousel-item">
-                  <img src="images/AP3-845x563.jpg.webp" class="d-block w-100" alt="Room 5">
+                  <img src="images/Lu20.jpeg" class="d-block w-100" alt="Room 5">
               </div>
               <div class="carousel-item">
-                  <img src="images/WhatsApp Image 2024-12-03 at 14.58.12_f113bb9c.jpg" class="d-block w-100" alt="Room 6">
+                  <img src="images/plesant street.jpg" class="d-block w-100" alt="Room 6">
               </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
@@ -1049,24 +1042,24 @@ justify-content: center;
                     <div class="thum-images d-flex bg-white">
     
                         <div class="IMG-content2">
-                            <img src="images/WhatsApp Image 2024-12-03 at 14.58.12_18b2a0c8.jpg" alt="Room 2" onclick="changeCarouselImage(0)">
+                            <img src="images/Apo-1.jpeg" alt="Room 2" onclick="changeCarouselImage(0)">
                         </div>
     
                         <div class="IMG-content2">
-                            <img src="images/AP2-845x563.jpg.webp" alt="Room 2" onclick="changeCarouselImage(1)">
+                            <img src="images/kkd_optimized.jpg" alt="Room 2" onclick="changeCarouselImage(1)">
                         </div>
     
                         <div class="IMG-content2">
-                            <img src="images/AP4-845x563.jpg.webp" alt="Room 2" onclick="changeCarouselImage(2)">
+                            <img src="images/kss_optimized.jpg" alt="Room 2" onclick="changeCarouselImage(2)">
                         </div>
                         <div class="IMG-content3">
-                            <img src="images/AP5-845x563.jpg.webp" alt="Room 3" onclick="changeCarouselImage(3)">
+                            <img src="images/plesant4.jpg" alt="Room 3" onclick="changeCarouselImage(3)">
                         </div>
                         <div class="IMG-content4">
-                            <img src="images/2-street-34.jpg" alt="Room 3" onclick="changeCarouselImage(4)">
+                            <img src="images/Lu20.jpeg" alt="Room 3" onclick="changeCarouselImage(4)">
                         </div>
                         <div class="IMG-content4">
-                            <img src="images/AP3-845x563.jpg.webp" alt="Room 3" onclick="changeCarouselImage(5)">
+                            <img src="images/plesant street.jpg" alt="Room 3" onclick="changeCarouselImage(5)">
                         </div>
                        
                         
@@ -1099,25 +1092,27 @@ justify-content: center;
                 <div class="features text-start" style="box-shadow: 0 4px 6px rgb(1, 7, 55); font-family: 'Times New Roman', Times, serif;">
                     <h4  class="">Features</h4>
                     <ul>
-                        <li>Access to secured elevator</li>
-                        <li>Complimentary breakfast</li>
-                        <li>Free internet access</li>
-                        <li>Stunning city views</li>
+                        <li>Cozy Sleeping Area</li>
+                        <li>Modern Bathroom</li>
+                        <li> Prime Location:</li>
+                        <li>Fully Equipped Kitchenette</li>
                     </ul>
 
 
-                    <p class="text-center " style="margin-top: em; font-size: 3.5em;">₦1,000,000</p>
+                    <p class="text-center " style="margin-top: em; font-size: 1.5em;"> ₦45,000 per night</p>
+
+                    
                     
                     <div class="centered-div">
-                        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" data-apartment="PentHouse3" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
+                        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" data-apartment="Classic-Studio-Apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
                         </button>
                     </div>
                     
                         
                 </div>
                 </div>
-    
-         </div>
+              </div>
+              
 
        
      
@@ -1194,70 +1189,22 @@ justify-content: center;
 
                 <div class="description-tex-para " >
                     <div class="description-tex-para1">
-                        <p>The prestine Apartments21 is tastefully furnished 3 bedroom, a spacious living room and butler room with a massage chair, a dining table for six.</p>
+                      <h3>Classic  Studio Apartment - Apo</h3>
+                        <p>This modern and stylish studio apartment offers the perfect blend of comfort and convenience, located just steps away from Shoprite Apo, one of the city’s most vibrant shopping and dining hubs. Ideal for singles or couples, this apartment features:
+                        </p>
                     </div>
 
                     <div class="description-tex-para2">
-                        <P>This beautiful apartment is en-suited with bathroom per room, Guest restroom and fully fitted kitchen.</P>
-                        <P>The kitchen has been provided with a dishwasher, a washing machine and dryer (for your clothes).</P>
-                    </div>
-
-                    <div class="description-tex-para3">
-                        <P>The apartment is also attached with a 24 hours butler services and a nanny and chef on request. </P>
-                    </div>
-
-                    <div class="description-tex-para-main-contain">
-
-                    
-                    <div class="description-tex-para4">
-                        <P>For your luxury and comfort, each room comes with:</P>
+                        <P>●	Open-Concept Living Space: A well-designed studio layout that maximizes space and functionality, with distinct areas for sleeping, living, and dining.
+                        <p>●	Fully Equipped Kitchenette: Featuring contemporary appliances, sleek countertops, and ample storage, this space is perfect for preparing meals at home.</p>
+                        <p>●	Cozy Sleeping Area: A comfortable bed nook with space for relaxation, providing a restful environment.</p>
+                        <p>●	Modern Bathroom: A stylish and functional bathroom with high-quality fixtures, offering both style and practicality.</p>
+                        <p>●	Prime Location: Just a short walk to Shoprite Apo, offering easy access to supermarkets, restaurants, public transport, and more. Enjoy the convenience of a well-connected, bustling neighborhood.</p>
+                        <p>●	Secure Building: The apartment is located in a secure, well-maintained building, ensuring peace of mind and a safe living environment.</p>
+                        <p>  This studio apartment combines the best of urban living, comfort, and location, making it the perfect choice for anyone looking to enjoy city life with easy access to all amenities.</P>
                     </div>
 
 
-
-
-                    <div class="description-tex-grid">
-
-                        <div class="description-tex-grid-item">
-                            <ul>
-                                <li>Bathrobes and Slippers</li>
-                                <li>Hairdryer</li>
-                                <li>Refrigerator</li>
-                                <li>Marble Bathroom</li>
-                                <li>Safety Deposit Box (Large enough for a Laptop)</li>
-                            </ul>
-                        </div>
-
-                        
-
-
-
-
-
-                        <div class="description-tex-grid-item">
-                            <li>Air Conditioning</li>
-                            <li> Marble Desk and Chair</li>
-                            <li> A Minibar</li>
-                            <li>Free High-Speed Wi-Fi</li>
-                            <li>24 Hours Room Service</li>
-                        </div>
-                        
-                       
-                       
-                        
-                        
-
-                        <div class="description-tex-grid-item">
-                            <li> Flat-Screen Smart TV</li>
-                            <li>Local and Intl. Channels</li>
-                            <li>Complimentary Water</li>
-                            <li>Dry-Cleaning Services</li>
-                            <li>Bathroom Toiletries</li>
-                        </div>
-
-
-                    </div>
-                  </div>
                 </div>
             </div>
 
@@ -1292,17 +1239,18 @@ justify-content: center;
     <div class="features-mobile text-start" style="box-shadow: 0 4px 6px rgb(1, 7, 55); font-family: 'Times New Roman', Times, serif;">
       <h4  class="">Features</h4>
       <ul>
-          <li>Access to secured elevator</li>
-          <li>Complimentary breakfast</li>
-          <li>Free internet access</li>
-          <li>Stunning city views</li>
+        <li>Cozy Sleeping Area</li>
+        <li>Modern Bathroom</li>
+        <li> Prime Location:</li>
+        <li>Fully Equipped Kitchenette</li>
       </ul>
 
 
-      <p class="text-center " style="margin-top: em; font-size: 3.5em;">₦1,000,000</p>
-      
+      <p class="text-center " style="margin-top: em; font-size: 1.5em;"> ₦45,000 per night</p>
+     
+  
       <div class="centered-div">
-          <button type="button" class="btn book-now-btn bg-white" id="read-more-btn"  data-apartment="PentHouse3" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: rgb(0, 0, 0);">Book Now
+          <button type="button" class="btn book-now-btn bg-white" id="read-more-btn"  data-apartment="Classic-Studio-Apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: rgb(0, 0, 0);">Book Now
           </button>
       </div>
       
@@ -1326,11 +1274,12 @@ justify-content: center;
                   <a href="">
                       <img src="images/AP5-845x563.jpg.webp" class="card-img-top" alt="118 Hamptons, Orange Island">
                       <div class="card-body">
-                        <h5 class="card-title">118 Hamptons, Orange Island</h5>
+                        <h5 class="card-title">Modern 1-room Apartment - Lugbe
+                        </h5>
                         <p class="card-text">
                           <span class="new-price">N 180,000,000</span>
                         </p>
-                        <p class="property-info">Orange Island, End of Freedom way, Lekki</p>
+                        <p class="property-info"><i class="fas fa-map-marker-alt"></i>location -ludbe</p>
                         <div class="property-info-content d-flex justify-content-between">
     
                             <div class="property-info-para">
@@ -1354,17 +1303,17 @@ justify-content: center;
                   <a href="">
                       <img src="images/AP2-845x563.jpg.webp" class="card-img-top" alt="Beach Resort Estate">
                       <div class="card-body">
-                        <h5 class="card-title">Beach Resort Estate</h5>
+                        <h5 class="card-title">Delux royale 3 Bedroom  Apartment - Apo</h5>
                         <p class="card-text">
                          
                           <span class="new-price">N 280,000,000</span>
                         </p>
-                        <p class="property-info">Platinum Way, Osapa London, Lekki</p>
+                        <p class="property-info">Standard Bedroom and Bathrooms</p>
 
                         <div class="property-info-content d-flex justify-content-between">
     
                             <div class="property-info-para">
-                                <p class="property-info">4 Beds • 2 Baths</p>
+                                <p class="property-info"><i class="fas fa-map-marker-alt"></i>location -Apo</p>
                             </div>
     
                             <div class="property-info-btn">
@@ -1384,12 +1333,12 @@ justify-content: center;
                   <a href="">
                       <img src="images/AJ_4533-93.jpg" class="card-img-top" alt="Signature Estate, Lekki">
                       <div class="card-body">
-                        <h5 class="card-title">Signature Estate, Lekki</h5>
+                        <h5 class="card-title">Executive 2-Room Apartment - Apo</h5>
                         <p class="card-text">
                           
                           <span class="new-price">N 220,000,000</span>
                         </p>
-                        <p class="property-info">Off Freedom Way, Lekki Phase 1</p>
+                        <p class="property-info"><i class="fas fa-map-marker-alt"></i>Location -Apo</p>
 
                         <div class="property-info-content d-flex justify-content-between">
     
@@ -1422,7 +1371,7 @@ justify-content: center;
       <div class="container" style="margin-top: 2rem; height: 380px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
         <h1 class=" customers-header text-center mb-4">Customer Reviews</h1>
         <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner m-auto">
+            <div class="carousel-inner m-auto" style="height: 400px;">
                 <div class="carousel-item active">
                     <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
                     <p class="review-author">- Solange, New Zealand</p>
@@ -1555,7 +1504,7 @@ justify-content: center;
       </div>
     </footer>
 
-   <button type="button" class="btn-book book-now-btn" id="read-more-btn" data-bs-toggle="modal" data-apartment="PentHouse3" data-bs-target="#reservationModal" style="color: white;">Book Now</button>
+   <button type="button" class="btn-book book-now-btn" id="read-more-btn" data-bs-toggle="modal" data-apartment="Classic-Studio-Apartment" data-bs-target="#reservationModal" style="color: white;">Book Now</button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
